@@ -663,4 +663,17 @@ ROLLBACK;
 THROW;
 END CATCH;
 
+--Views
+--vw_DoctorSchedule: Upcoming appointments per doctor
+CREATE VIEW vw_DoctorSchedule AS
+SELECT doc.D_ID,
+doc.F_Name + ' ' + doc.M_Name + ' ' + doc.L_Name AS DoctorName,
+a.Appointment_Date,
+a.Appointment_Time,
+p.P_ID,
+p.F_Name + ' ' + p.L_Name AS PatientName
+FROM Doctors doc
+JOIN Appointments a ON doc.D_ID = a.D_ID
+JOIN Patients p ON a.P_ID = p.P_ID;
+
 

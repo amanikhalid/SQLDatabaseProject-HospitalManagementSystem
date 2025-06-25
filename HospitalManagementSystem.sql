@@ -755,3 +755,11 @@ EXEC sp_add_schedule
 @freq_interval = 1,
 @active_start_time = 070000;
 GO
+
+--Rename the schedule to avoid name conflict
+EXEC sp_add_schedule
+@schedule_name = 'Daily_7AM_DoctorReport',
+@freq_type = 4,  -- Daily
+@freq_interval = 1,
+@active_start_time = 070000;
+GO

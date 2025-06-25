@@ -20,3 +20,15 @@ DOB DATE NOT NULL,
 Gender VARCHAR(10) CHECK (Gender IN ('Male', 'Female')),
 ContactNumber VARCHAR(20) UNIQUE
 );
+
+-- Doctors Table
+CREATE TABLE Doctors (
+D_ID INT PRIMARY KEY IDENTITY(1,1),
+F_Name VARCHAR(50) NOT NULL,
+M_Name VARCHAR(50) NOT NULL,
+L_Name VARCHAR(50) NOT NULL,
+Specialization VARCHAR(100) NOT NULL,
+ContactNumber VARCHAR(20),
+Department_ID INT NOT NULL FOREIGN KEY REFERENCES Departments(Department_ID)
+);
+

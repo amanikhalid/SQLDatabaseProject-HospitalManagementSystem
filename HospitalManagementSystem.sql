@@ -285,6 +285,7 @@ INSERT INTO Appointments (P_ID, D_ID, Appointment_Date, Appointment_Time) VALUES
 (19, 19, '2025-07-19', '12:30:00'),
 (20, 20, '2025-07-20', '14:15:00');
 
+SELECT * FROM Appointments;
 --Staff Table
 INSERT INTO Staff (FullName, Role, Shift, Department_ID) VALUES
 ('Fatima Al Jahwari', 'Nurse', 'Morning', 1),
@@ -405,6 +406,8 @@ INSERT INTO Admissions (P_ID, Room_No, ADate, DateOut) VALUES
 (21, 101, '2025-07-21', '2025-07-29'),
 (22, 102, '2025-07-22', NULL);
 
+SELECT * FROM Admissions;
+
 --User Table
 INSERT INTO Users (Username, PasswordHT, U_Role) VALUES
 ('admin1', 'hashedpassword1', 'Admin'),
@@ -434,4 +437,16 @@ FROM Departments d
 LEFT JOIN Doctors doc ON d.Department_ID = doc.Department_ID
 LEFT JOIN Appointments a ON doc.D_ID = a.D_ID
 GROUP BY d.Department_ID, d.Department_Name;
+
+--3. Doctors with more than 5 appointments in July 2025 
+SELECT doc.D_ID, doc.F_Name + ' ' + doc.M_Name + ' ' + doc.L_Name AS DoctorName,
+       COUNT(a.Appointment_ID) AS ApptCount
+FROM Doctors doc
+JOIN Appointments a ON doc.D_ID = a.D_ID
+WHERE a.Appointment_Date BETWEEN '2025-07-01' AND '2025-07-31'
+GROUP BY doc.D_ID, doc.F_Name, doc.M_Name, doc.L_Name
+HAVING COUNT(a.Appointment_ID) > 5;
+
+
+
 

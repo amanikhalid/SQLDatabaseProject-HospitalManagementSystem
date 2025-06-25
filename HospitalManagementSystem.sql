@@ -769,3 +769,8 @@ EXEC sp_attach_schedule
 @job_name = 'Doctors_Daily_Schedule_Report',
 @schedule_name = 'Daily_7AM_DoctorReport';
 GO
+
+--Add the job to the server
+EXEC sp_add_jobserver
+@job_name = 'Doctors_Daily_Schedule_Report';
+GO

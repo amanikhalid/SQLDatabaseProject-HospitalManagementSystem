@@ -251,3 +251,11 @@ INSERT INTO Doctors (F_Name, M_Name, L_Name, Specialization, ContactNumber, Depa
 ('Rashid', 'Basim', 'Al Mahrouqi', 'General Surgery', '96893311018', 18),
 ('Maya', 'Ali', 'Abraham', 'Obstetrics and Gynecology', '96893311019', 19),
 ('Huda', 'Suhail', 'Al Zakwani', 'Physical Therapy', '96893311020', 20);
+
+CREATE TABLE Appointments (
+    Appointment_ID INT PRIMARY KEY IDENTITY(1,1),
+    P_ID INT NOT NULL FOREIGN KEY REFERENCES Patients(P_ID),
+    D_ID INT NOT NULL FOREIGN KEY REFERENCES Doctors(D_ID),
+    Appointment_Date DATETIME NOT NULL,
+    Appointment_Time DATETIME NOT NULL
+);

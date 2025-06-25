@@ -32,3 +32,12 @@ ContactNumber VARCHAR(20),
 Department_ID INT NOT NULL FOREIGN KEY REFERENCES Departments(Department_ID)
 );
 
+-- Appointments Table
+CREATE TABLE Appointments (
+Appointment_ID INT PRIMARY KEY IDENTITY(1,1),
+P_ID INT NOT NULL FOREIGN KEY REFERENCES Patients(P_ID),
+D_ID INT NOT NULL FOREIGN KEY REFERENCES Doctors(D_ID),
+Appointment_Date DATETIME NOT NULL,
+Appointment_Time DATETIME NOT NULL
+);
+

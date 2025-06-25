@@ -426,3 +426,12 @@ SELECT DISTINCT p.P_ID, p.F_Name, p.M_Name, p.L_Name
 FROM Patients p
 JOIN Appointments a ON p.P_ID = a.P_ID
 WHERE a.D_ID = 3;
+
+--2. Count of appointments per department 
+SELECT d.Department_ID, d.Department_Name,
+       COUNT(a.Appointment_ID) AS AppointmentCount
+FROM Departments d
+LEFT JOIN Doctors doc ON d.Department_ID = doc.Department_ID
+LEFT JOIN Appointments a ON doc.D_ID = a.D_ID
+GROUP BY d.Department_ID, d.Department_Name;
+

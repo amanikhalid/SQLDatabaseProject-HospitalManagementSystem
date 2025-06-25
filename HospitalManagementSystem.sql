@@ -61,3 +61,11 @@ Total_Cost DECIMAL(10,2) NOT NULL,
 BServices VARCHAR(500),
 BillDate DATE NOT NULL
 );
+
+--Rooms Table
+CREATE TABLE Rooms (
+Room_No INT PRIMARY KEY,
+Room_Type VARCHAR(50) CHECK (Room_Type IN ('ICU', 'General', 'CCU', 'NICU', 'Outpatient Examination Room')),
+IsAvailable VARCHAR(6) DEFAULT 'True'
+);
+

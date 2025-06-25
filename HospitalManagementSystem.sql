@@ -488,5 +488,34 @@ RETURN DATEDIFF(YEAR, @DOB, GETDATE())
 THEN 1 ELSE 0 END;
 END;
 
+-- Stored procedure to admit a patient (insert to Admissions, update Room availability)
+CREATE PROCEDURE sp_AdmitPatient
+@P_ID INT,
+@Room_No INT,
+@ADate DATE
+AS
+BEGIN
+SET NOCOUNT ON;
+BEGIN TRANSACTION;
+BEGIN TRY
+IF EXISTS (SELECT 1 FROM Rooms WHERE Room_No = @Room_No AND IsAvailable = 'True')
+BEGIN
+INSERT INTO Admissions (P_ID, Room_No, ADate) VALUES (@P_ID, @Room_No, @ADate);
+UPDATE Rooms SET IsAvailable = 'False' WHERE Room_No = @Room_No;
+COMMIT;
+END
+ELSE
+BEGIN
+RAISERROR('Room not available.', 16, 1);
+ROLLBACK;
+END
+END TRY
+BEGIN CATCH
+ROLLBACK;
+THROW;
+END CATCH
+END;
+
+
 
 

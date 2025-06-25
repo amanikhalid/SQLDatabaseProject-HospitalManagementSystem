@@ -747,3 +747,11 @@ EXEC sp_add_jobstep
 @command = 'EXEC HospitalMS.dbo.sp_LogDoctorSchedule;',
 @database_name = 'HospitalMS';
 GO
+
+--Create the Schedule
+EXEC sp_add_schedule
+@schedule_name = 'Daily_7AM',
+@freq_type = 4,  -- daily
+@freq_interval = 1,
+@active_start_time = 070000;
+GO

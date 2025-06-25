@@ -713,5 +713,21 @@ Department VARCHAR(100),
 LogDate DATETIME DEFAULT GETDATE()
 );
 
-
+-- Create the log table
+USE HospitalMS;
+GO
+IF OBJECT_ID('DoctorDailyScheduleLog', 'U') IS NULL
+BEGIN
+CREATE TABLE DoctorDailyScheduleLog (
+LogID INT IDENTITY(1,1) PRIMARY KEY,
+Doctor_ID INT,
+Doctor_Name VARCHAR(100),
+Patient_ID INT,
+Patient_Name VARCHAR(100),
+AppointmentTime DATETIME,
+Department VARCHAR(100),
+LogDate DATETIME DEFAULT GETDATE()
+);
+END
+GO
 

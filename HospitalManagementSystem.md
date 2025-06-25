@@ -106,3 +106,14 @@ A BEGIN TRANSACTION block is implemented to simulate patient admission:
 - Adds initial Billing
 
 - Wrapped in TRY...CATCH to rollback if any failure occurs
+
+### Part 10: SQL Server Agent Job
+A scheduled SQL Job is created to run daily:
+
+- Job Name: Doctors_Daily_Schedule_Report
+
+- Schedule: Daily at 7:00 AM
+
+- Action: Executes sp_LogDoctorSchedule and logs appointments into DoctorDailyScheduleLog
+
+Uses sp_add_job, sp_add_schedule, sp_attach_schedule, and sp_add_jobserver.

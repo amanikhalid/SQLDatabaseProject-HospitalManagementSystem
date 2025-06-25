@@ -621,7 +621,7 @@ DELETE FROM Patients
 WHERE P_ID IN (SELECT P_ID FROM deleted);
 END;
 
---Security
+--Security Roles & Permissions
 --Create at least two user roles: DoctorUser, AdminUser
 -- Create roles
 CREATE ROLE DoctorUser;
@@ -698,6 +698,20 @@ FROM Departments d
 LEFT JOIN Doctors doc ON d.Department_ID = doc.Department_ID
 LEFT JOIN Appointments a ON doc.D_ID = a.D_ID
 GROUP BY d.Department_ID, d.Department_Name;
+
+--SQL Agent Job for Daily Doctor Schedule
+
+--Create Report Table
+CREATE TABLE DoctorDailyScheduleLog (
+LogID INT IDENTITY(1,1) PRIMARY KEY,
+LogDate DATE DEFAULT CAST(GETDATE() AS DATE),
+Doctor_ID INT,
+Doctor_Name VARCHAR(100),
+Patient_ID INT,
+Patient_Name VARCHAR(100),
+AppointmentTime DATETIME,
+Department VARCHAR(100)
+);
 
 
 

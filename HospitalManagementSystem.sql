@@ -468,3 +468,11 @@ GROUP BY p.P_ID, p.F_Name, p.L_Name
 HAVING SUM(b.Total_Cost) > 1000;
 
 
+--6. Subquery/EXISTS: patients with no appointments 
+SELECT p.P_ID, p.F_Name + ' ' + p.L_Name AS PatientName
+FROM Patients p
+WHERE NOT EXISTS (
+    SELECT 1 FROM Appointments a WHERE a.P_ID = p.P_ID
+);
+
+

@@ -95,3 +95,14 @@ DoctorUser:
 AdminUser:
 
 - Full INSERT, UPDATE, and SELECT access on all tables
+
+ ### Part 9: Transactions (TCL)
+A BEGIN TRANSACTION block is implemented to simulate patient admission:
+
+- Inserts into Admissions
+
+- Updates Room availability
+
+- Adds initial Billing
+
+- Wrapped in TRY...CATCH to rollback if any failure occurs

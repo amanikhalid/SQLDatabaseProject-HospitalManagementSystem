@@ -1,4 +1,4 @@
---Create database
+﻿--Create database
 CREATE DATABASE HospitalMS;
 
 --Use the database
@@ -229,7 +229,7 @@ CREATE TABLE Doctors (
     Department_ID INT NOT NULL FOREIGN KEY REFERENCES Departments(Department_ID)
 );
 
---Insert 20 doctors with correct Department_IDs 1�20
+--Insert 20 doctors with correct Department_IDs 1–20
 INSERT INTO Doctors (F_Name, M_Name, L_Name, Specialization, ContactNumber, Department_ID) VALUES
 ('Hassan', 'Juma', 'Al Gheilani', 'Cardiology', '96893311001', 1),
 ('Suhaila', 'Rami', 'Al Qasimi', 'Neurology', '96893311002', 2),
@@ -262,7 +262,7 @@ CREATE TABLE Appointments (
 
 SELECT COUNT(*) AS PatientCount FROM Patients;
 
---Insert Appointments (only using D_ID 1�20)
+--Insert Appointments (only using D_ID 1–20)
 INSERT INTO Appointments (P_ID, D_ID, Appointment_Date, Appointment_Time) VALUES
 (1, 1, '2025-07-01', '09:00:00'),
 (2, 2, '2025-07-02', '10:30:00'),
@@ -541,6 +541,20 @@ SET Department_ID = @Department_ID,
 Shift = @Shift
 WHERE D_ID = @D_ID;
 END;
+
+--Triggers
+-- After insert on Appointments → auto log in MedicalRecords
+CREATE TRIGGER trg_LogAppointmentToMedicalRecords
+ON Appointments
+AFTER INSERT
+AS
+BEGIN
+INSERT INTO MedicalRecords (P_ID, D_ID, VisitDate, Diagnosis, Treatment_Plans, Notes)
+SELECT P_ID, D_ID, Appointment_Date, '', '', 'Auto-log from appointment'
+FROM inserted;
+END;
+
+
 
 
 

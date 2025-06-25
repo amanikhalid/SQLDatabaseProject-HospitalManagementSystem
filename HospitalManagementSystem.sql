@@ -704,13 +704,13 @@ GROUP BY d.Department_ID, d.Department_Name;
 --Create Report Table
 CREATE TABLE DoctorDailyScheduleLog (
 LogID INT IDENTITY(1,1) PRIMARY KEY,
-LogDate DATE DEFAULT CAST(GETDATE() AS DATE),
 Doctor_ID INT,
 Doctor_Name VARCHAR(100),
 Patient_ID INT,
 Patient_Name VARCHAR(100),
 AppointmentTime DATETIME,
-Department VARCHAR(100)
+Department VARCHAR(100),
+LogDate DATETIME DEFAULT GETDATE()
 );
 
 

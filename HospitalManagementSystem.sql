@@ -738,3 +738,12 @@ GO
 --Create the Job
 EXEC sp_add_job @job_name = 'Doctors_Daily_Schedule_Report';
 GO
+
+--Add Job Step
+EXEC sp_add_jobstep
+@job_name = 'Doctors_Daily_Schedule_Report',
+@step_name = 'InsertTodaySchedule',
+@subsystem = 'TSQL',
+@command = 'EXEC HospitalMS.dbo.sp_LogDoctorSchedule;',
+@database_name = 'HospitalMS';
+GO

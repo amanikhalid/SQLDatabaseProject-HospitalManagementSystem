@@ -735,3 +735,6 @@ GO
 USE msdb;
 GO
 
+--Create the Job
+EXEC sp_add_job @job_name = 'Doctors_Daily_Schedule_Report';
+GO

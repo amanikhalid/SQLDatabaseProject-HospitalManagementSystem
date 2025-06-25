@@ -527,5 +527,20 @@ INSERT INTO Billing (P_ID, BServices, Total_Cost, BillDate)
 VALUES (@P_ID, @Services, @Total_Cost, GETDATE());
 END;
 
+--Procedure to assign doctor to department and shift
+ALTER TABLE Doctors ADD Shift VARCHAR(20); 
+
+CREATE PROCEDURE sp_AssignDoctorToDepartmentAndShift
+@D_ID INT,
+@Department_ID INT,
+@Shift VARCHAR(20)
+AS
+BEGIN
+UPDATE Doctors
+SET Department_ID = @Department_ID,
+Shift = @Shift
+WHERE D_ID = @D_ID;
+END;
+
 
 

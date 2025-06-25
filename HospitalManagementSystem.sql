@@ -284,3 +284,26 @@ INSERT INTO Appointments (P_ID, D_ID, Appointment_Date, Appointment_Time) VALUES
 (18, 18, '2025-07-18', '08:15:00'),
 (19, 19, '2025-07-19', '12:30:00'),
 (20, 20, '2025-07-20', '14:15:00');
+
+--Staff Table
+INSERT INTO Staff (FullName, Role, Shift, Department_ID) VALUES
+('Fatima Al Jahwari', 'Nurse', 'Morning', 1),
+('John Smith', 'Receptionist', 'Evening', 2),
+('Hanan Al Siyabi', 'Admin', 'Night', 3),
+('Mohammed Al Habsi', 'Nurse', 'Morning', 4),
+('Linda Carter', 'Receptionist', 'Evening', 5),
+('Yahya Al Rawahi', 'Admin', 'Night', 6),
+('Salma Al Lawati', 'Nurse', 'Morning', 7),
+('David Lee', 'Receptionist', 'Evening', 8),
+('Noor Al Amri', 'Admin', 'Night', 9),
+('Saeed Al Kharusi', 'Nurse', 'Morning', 10),
+('Aisha Al Hinai', 'Receptionist', 'Evening', 11),
+('Omar Al Busaidi', 'Admin', 'Night', 12),
+('Susan Miller', 'Nurse', 'Morning', 13),
+('Hamad Al Maskari', 'Receptionist', 'Evening', 14),
+('Lina Al Riyami', 'Admin', 'Night', 15),
+('Rashid Al Nabhani', 'Nurse', 'Morning', 16),
+('Nora Al Maamari', 'Receptionist', 'Evening', 17),
+('Khalid Al Ghafri', 'Admin', 'Night', 18),
+('Mona Al Azri', 'Nurse', 'Morning', 19),
+('Peter Johnson', 'Receptionist', 'Evening', 20);

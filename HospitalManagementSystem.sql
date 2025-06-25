@@ -458,5 +458,13 @@ JOIN Patients p ON m.P_ID = p.P_ID
 JOIN Doctors doc ON m.D_ID = doc.D_ID
 JOIN Departments d ON doc.Department_ID = d.Department_ID;
 
+--5. Group by/having: patients billed over 1000 
+SELECT p.P_ID, p.F_Name + ' ' + p.L_Name AS PatientName,
+       COUNT(b.B_ID) AS BillingCount,
+       SUM(b.Total_Cost) AS TotalBilled
+FROM Billing b
+JOIN Patients p ON b.P_ID = p.P_ID
+GROUP BY p.P_ID, p.F_Name, p.L_Name
+HAVING SUM(b.Total_Cost) > 1000;
 
 

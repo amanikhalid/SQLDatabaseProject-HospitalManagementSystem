@@ -604,20 +604,20 @@ ON Patients
 INSTEAD OF DELETE
 AS
 BEGIN
-    -- Check for pending bills
-    IF EXISTS (
-        SELECT 1
-        FROM Billing b
-        JOIN deleted d ON b.P_ID = d.P_ID
-    )
-    BEGIN
-        RAISERROR('Cannot delete patient with pending bills.', 16, 1);
-        ROLLBACK;
-        RETURN;
-    END
+-- Check for pending bills
+IF EXISTS (
+SELECT 1
+FROM Billing b
+JOIN deleted d ON b.P_ID = d.P_ID
+)
+BEGIN
+RAISERROR('Cannot delete patient with pending bills.', 16, 1);
+ROLLBACK;
+RETURN;
+END
 
-    -- If no bills, proceed with delete
-    DELETE FROM Patients
-    WHERE P_ID IN (SELECT P_ID FROM deleted);
+-- If no bills, proceed with delete
+DELETE FROM Patients
+WHERE P_ID IN (SELECT P_ID FROM deleted);
 END;
 

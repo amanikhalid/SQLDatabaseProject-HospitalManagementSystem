@@ -25,3 +25,14 @@ Tables were created with proper primary keys, foreign key constraints, data type
 - Staff – nurses/admins with shifts
 
 - Users – login and roles for system access
+
+### Part 2: Sample Data
+Each table is populated with realistic sample data:
+
+- 22 Patients with Omani names
+
+- 20 Doctors assigned across departments
+
+- 20+ Appointments
+
+- MedicalRecords, Admissions, and Billing entries

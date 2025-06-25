@@ -731,3 +731,7 @@ LogDate DATETIME DEFAULT GETDATE()
 END
 GO
 
+--switch to msdb
+USE msdb;
+GO
+

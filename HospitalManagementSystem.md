@@ -83,4 +83,15 @@ Triggers used for automatic actions and validation:
 
 - AFTER UPDATE on Rooms → ensures no two patients occupy same room
 
+### Part 8: Security Roles (DCL)
+User-defined roles:
 
+DoctorUser:
+
+- GRANT SELECT on Patients and Appointments
+
+- REVOKE DELETE to prevent sensitive data loss
+
+AdminUser:
+
+- Full INSERT, UPDATE, and SELECT access on all tables

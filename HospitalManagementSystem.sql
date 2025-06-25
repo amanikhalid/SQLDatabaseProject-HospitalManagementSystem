@@ -677,3 +677,15 @@ JOIN Appointments a ON doc.D_ID = a.D_ID
 JOIN Patients p ON a.P_ID = p.P_ID;
 
 
+--vw_PatientSummary: Patient info with their latest visit
+CREATE VIEW vw_PatientSummary AS
+SELECT p.P_ID,
+p.F_Name + ' ' + p.M_Name + ' ' + p.L_Name AS FullName,
+MAX(m.VisitDate) AS LastVisitDate,
+m.Diagnosis,
+m.Treatment_Plans
+FROM Patients p
+JOIN MedicalRecords m ON p.P_ID = m.P_ID
+GROUP BY p.P_ID, p.F_Name, p.M_Name, p.L_Name, m.Diagnosis, m.Treatment_Plans;
+
+

@@ -575,7 +575,49 @@ DELETE FROM Patients WHERE P_ID IN (SELECT P_ID FROM deleted);
 END
 END;
 
+--After update on Rooms → ensure no two patients occupy same room
+CREATE TRIGGER trg_PreventPatientDeleteIfBillsExist
+ON Patients
+INSTEAD OF DELETE
+AS
+BEGIN
+IF EXISTS (
+SELECT 1
+FROM Billing b
+JOIN deleted d ON b.P_ID = d.P_ID
+)
+BEGIN
+RAISERROR('Cannot delete patient with pending bills.', 16, 1);
+ROLLBACK;
+END
+ELSE
+BEGIN
+DELETE FROM Patients WHERE P_ID IN (SELECT P_ID FROM deleted);
+END
+END;
+-----------------
+DROP TRIGGER IF EXISTS trg_PreventPatientDeleteIfBillsExist;
+GO
 
+CREATE TRIGGER trg_PreventPatientDeleteIfBillsExist
+ON Patients
+INSTEAD OF DELETE
+AS
+BEGIN
+    -- Check for pending bills
+    IF EXISTS (
+        SELECT 1
+        FROM Billing b
+        JOIN deleted d ON b.P_ID = d.P_ID
+    )
+    BEGIN
+        RAISERROR('Cannot delete patient with pending bills.', 16, 1);
+        ROLLBACK;
+        RETURN;
+    END
 
-
+    -- If no bills, proceed with delete
+    DELETE FROM Patients
+    WHERE P_ID IN (SELECT P_ID FROM deleted);
+END;
 

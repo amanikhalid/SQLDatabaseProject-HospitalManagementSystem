@@ -59,3 +59,7 @@ Views are created for simplified reporting and abstraction:
 
 - Svw_DepartmentStats – number of doctors & patients per department
 
+## Part 5: Function
+
+Calculated the current age of a patient from their date of birth.
+

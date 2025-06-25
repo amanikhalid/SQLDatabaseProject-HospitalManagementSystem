@@ -117,3 +117,10 @@ A scheduled SQL Job is created to run daily:
 - Action: Executes sp_LogDoctorSchedule and logs appointments into DoctorDailyScheduleLog
 
 Uses sp_add_job, sp_add_schedule, sp_attach_schedule, and sp_add_jobserver.
+
+### Final Notes
+- Data consistency is maintained using constraints and triggers
+
+- Error handling implemented in stored procedures and transactions
+
+- Project is structured to reflect real-world hospital operations

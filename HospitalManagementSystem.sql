@@ -166,3 +166,65 @@ INSERT INTO Doctors (F_Name, M_Name, L_Name, Specialization, ContactNumber, Depa
 ('Rashid', 'Basim', 'Al Mahrouqi', 'General Surgery', '96893311018', 18),
 ('Maya', 'Ali', 'Abraham', 'Obstetrics and Gynecology', '96893311019', 19),
 ('Huda', 'Suhail', 'Al Zakwani', 'Physical Therapy', '96893311020', 20);
+
+
+SELECT * FROM Departments;
+SELECT * FROM Doctors;
+
+--Appointment Table
+INSERT INTO Appointments (P_ID, D_ID, Appointment_Date, Appointment_Time) VALUES
+(1, 1, '2025-07-01', '09:00:00'),
+(2, 2, '2025-07-02', '10:30:00'),
+(3, 3, '2025-07-03', '11:15:00'),
+(4, 4, '2025-07-04', '08:45:00'),
+(5, 5, '2025-07-05', '13:00:00'),
+(6, 6, '2025-07-06', '14:30:00'),
+(7, 7, '2025-07-07', '09:15:00'),
+(8, 8, '2025-07-08', '10:45:00'),
+(9, 9, '2025-07-09', '11:30:00'),
+(10, 10, '2025-07-10', '08:30:00'),
+(11, 11, '2025-07-11', '09:00:00'),
+(12, 12, '2025-07-12', '10:00:00'),
+(13, 13, '2025-07-13', '11:45:00'),
+(14, 14, '2025-07-14', '14:00:00'),
+(15, 15, '2025-07-15', '09:30:00'),
+(16, 16, '2025-07-16', '10:15:00'),
+(17, 17, '2025-07-17', '13:45:00'),
+(18, 18, '2025-07-18', '08:15:00'),
+(19, 19, '2025-07-19', '12:30:00'),
+(20, 20, '2025-07-20', '14:15:00');
+
+SELECT D_ID FROM Doctors ORDER BY D_ID;
+
+Drop Table Appointments;
+DROP TABLE MedicalRecords;
+DROP TABLE Billing;
+DROP TABLE Admissions;
+DROP TABLE Staff;
+
+DROP TABLE  Doctors;
+DROP TABLE Departments;
+
+CREATE TABLE Departments (
+    Department_ID INT PRIMARY KEY IDENTITY(1,1),
+    Department_Name VARCHAR(100) NOT NULL
+);
+
+
+INSERT INTO Departments (Department_Name) VALUES
+('Cardiology'), ('Neurology'), ('Pediatrics'), ('Orthopedics'),
+('Oncology'), ('Radiology'), ('Emergency'), ('Pathology'),
+('Anesthesiology'), ('Dermatology'), ('Gastroenterology'), ('Endocrinology'),
+('Psychiatry'), ('Urology'), ('Nephrology'), ('Ophthalmology'),
+('ENT'), ('General Surgery'), ('Obstetrics and Gynecology'), ('Physical Therapy');
+
+--Recreate doctors Table 
+CREATE TABLE Doctors (
+    D_ID INT PRIMARY KEY IDENTITY(1,1),
+    F_Name VARCHAR(50) NOT NULL,
+    M_Name VARCHAR(50) NOT NULL,
+    L_Name VARCHAR(50) NOT NULL,
+    Specialization VARCHAR(100) NOT NULL,
+    ContactNumber VARCHAR(20),
+    Department_ID INT NOT NULL FOREIGN KEY REFERENCES Departments(Department_ID)
+);

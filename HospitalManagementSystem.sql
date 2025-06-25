@@ -330,3 +330,29 @@ INSERT INTO Rooms (Room_No, Room_Type, IsAvailable) VALUES
 (118, 'CCU', 'True'),
 (119, 'NICU', 'False'),
 (120, 'Outpatient Examination Room', 'True');
+
+
+--Billing Table
+INSERT INTO Billing (P_ID, Total_Cost, BServices, BillDate) VALUES
+(1, 1200.50, 'Cardiology Consultation, ECG, Blood Test', '2025-07-02'),
+(2, 800.00, 'Neurology Consultation, MRI Scan', '2025-07-03'),
+(3, 600.75, 'Pediatrics Checkup, Vaccination', '2025-07-04'),
+(4, 950.00, 'Orthopedics Consultation, X-Ray', '2025-07-05'),
+(5, 1500.00, 'Oncology Chemotherapy Session', '2025-07-06'),
+(6, 700.25, 'Radiology Ultrasound', '2025-07-07'),
+(7, 400.00, 'Emergency Room Visit', '2025-07-08'),
+(8, 550.00, 'Pathology Blood Test', '2025-07-09'),
+(9, 900.00, 'Anesthesiology Consultation', '2025-07-10'),
+(10, 650.00, 'Dermatology Treatment', '2025-07-11'),
+(11, 1100.00, 'Gastroenterology Consultation', '2025-07-12'),
+(12, 750.00, 'Endocrinology Tests', '2025-07-13'),
+(13, 500.00, 'Psychiatry Session', '2025-07-14'),
+(14, 1300.00, 'Urology Surgery', '2025-07-15'),
+(15, 1200.00, 'Nephrology Dialysis', '2025-07-16'),
+(16, 850.00, 'Ophthalmology Checkup', '2025-07-17'),
+(17, 600.00, 'ENT Consultation', '2025-07-18'),
+(18, 950.00, 'General Surgery Operation', '2025-07-19'),
+(19, 1400.00, 'Obstetrics and Gynecology Delivery', '2025-07-20'),
+(20, 700.00, 'Physical Therapy Sessions', '2025-07-21'),
+(21, 1000.00, 'Cardiology Follow-up', '2025-07-22'),
+(22, 900.00, 'Neurology Scan', '2025-07-23');

@@ -688,4 +688,16 @@ FROM Patients p
 JOIN MedicalRecords m ON p.P_ID = m.P_ID
 GROUP BY p.P_ID, p.F_Name, p.M_Name, p.L_Name, m.Diagnosis, m.Treatment_Plans;
 
+--vw_DepartmentStats: Number of doctors and patients per department
+CREATE VIEW vw_DepartmentStats AS
+SELECT d.Department_ID,
+d.Department_Name,
+COUNT(DISTINCT doc.D_ID) AS DoctorCount,
+COUNT(DISTINCT a.P_ID) AS PatientCount
+FROM Departments d
+LEFT JOIN Doctors doc ON d.Department_ID = doc.Department_ID
+LEFT JOIN Appointments a ON doc.D_ID = a.D_ID
+GROUP BY d.Department_ID, d.Department_Name;
+
+
 

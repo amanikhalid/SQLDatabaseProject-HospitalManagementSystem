@@ -646,3 +646,21 @@ GRANT INSERT, UPDATE ON Users TO AdminUser;
 
 --REVOKE DELETE for Doctors
 REVOKE DELETE ON Doctors FROM PUBLIC;
+
+--Transactions (TCL)
+--TCL Example: admit a patient within a transaction 
+BEGIN TRANSACTION;
+BEGIN TRY
+INSERT INTO Admissions (P_ID, Room_No, ADate)
+VALUES (5, 105, GETDATE());
+UPDATE Rooms SET IsAvailable = 'False' WHERE Room_No = 105;
+INSERT INTO Billing (P_ID, Total_Cost, BServices, BillDate)
+VALUES (5, 200.00, 'Admission Fee', GETDATE());
+COMMIT;
+END TRY
+BEGIN CATCH
+ROLLBACK;
+THROW;
+END CATCH;
+
+

@@ -59,7 +59,19 @@ Views are created for simplified reporting and abstraction:
 
 - Svw_DepartmentStats – number of doctors & patients per department
 
-## Part 5: Function
+### Part 5: Function
 
 Calculated the current age of a patient from their date of birth.
+
+### Part 6: Stored Procedures
+Stored procedures for automating backend operations:
+
+- sp_AdmitPatient: admits a patient and updates room availability
+
+- sp_GenerateInvoice: inserts billing for services
+
+- sp_AssignDoctorToDepartment: updates a doctor’s department
+
+- sp_LogDoctorSchedule: logs daily appointments into a report table
+
 

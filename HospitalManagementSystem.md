@@ -49,3 +49,13 @@ Demonstrated SQL queries:
 - Search/filter logic
 
 - DISTINCT and COUNT queries
+
+### Part 4: Views
+Views are created for simplified reporting and abstraction:
+
+- vw_DoctorSchedule – doctor and their appointments
+
+- vw_PatientSummary – diagnosis and last visit
+
+- Svw_DepartmentStats – number of doctors & patients per department
+

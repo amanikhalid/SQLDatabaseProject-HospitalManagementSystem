@@ -356,3 +356,27 @@ INSERT INTO Billing (P_ID, Total_Cost, BServices, BillDate) VALUES
 (20, 700.00, 'Physical Therapy Sessions', '2025-07-21'),
 (21, 1000.00, 'Cardiology Follow-up', '2025-07-22'),
 (22, 900.00, 'Neurology Scan', '2025-07-23');
+
+--MedicalRecords Table
+INSERT INTO MedicalRecords (P_ID, D_ID, Diagnosis, Treatment_Plans, VisitDate, Notes) VALUES
+(1, 1, 'Hypertension', 'Medication and lifestyle changes', '2025-07-02', 'Patient advised to reduce salt intake'),
+(2, 2, 'Migraine', 'Prescribed painkillers', '2025-07-03', 'Follow up in 2 weeks'),
+(3, 3, 'Bronchitis', 'Antibiotics prescribed', '2025-07-04', 'Monitor respiratory symptoms'),
+(4, 4, 'Fractured arm', 'Cast and rest', '2025-07-05', 'X-ray to be repeated in 4 weeks'),
+(5, 5, 'Breast cancer', 'Chemotherapy plan started', '2025-07-06', 'Patient responded well to treatment'),
+(6, 6, 'Gallstones', 'Surgical removal scheduled', '2025-07-07', 'Pre-op tests completed'),
+(7, 7, 'Appendicitis', 'Appendectomy performed', '2025-07-08', 'Recovery progressing well'),
+(8, 8, 'Diabetes', 'Insulin therapy', '2025-07-09', 'Blood sugar levels monitored daily'),
+(9, 9, 'Skin rash', 'Topical creams prescribed', '2025-07-10', 'Avoid allergens'),
+(10, 10, 'Ulcerative colitis', 'Medication and diet control', '2025-07-11', 'Symptom improvement noted'),
+(11, 11, 'Thyroid disorder', 'Medication adjusted', '2025-07-12', 'Regular blood tests required'),
+(12, 12, 'Depression', 'Counseling and antidepressants', '2025-07-13', 'Follow up scheduled'),
+(13, 13, 'Kidney stones', 'Hydration and pain management', '2025-07-14', 'Ultrasound planned'),
+(14, 14, 'Glaucoma', 'Eye drops prescribed', '2025-07-15', 'Intraocular pressure monitored'),
+(15, 15, 'Sinusitis', 'Antibiotics and nasal spray', '2025-07-16', 'Symptom relief noted'),
+(16, 16, 'Hernia', 'Surgery scheduled', '2025-07-17', 'Pre-surgical assessment done'),
+(17, 17, 'Gallbladder infection', 'Antibiotics started', '2025-07-18', 'Monitor for complications'),
+(18, 18, 'Tonsillitis', 'Antibiotics and rest', '2025-07-19', 'Patient advised to stay hydrated'),
+(19, 19, 'Skin cancer', 'Surgical excision planned', '2025-07-20', 'Biopsy performed'),
+(20, 20, 'Labor and delivery', 'Normal delivery', '2025-07-21', 'Healthy baby delivered');
+

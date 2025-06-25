@@ -93,3 +93,30 @@ Room_No INT NOT NULL FOREIGN KEY REFERENCES Rooms(Room_No),
 ADate DATE NOT NULL,
 DateOut DATE
 );
+
+--Insert Data
+--Patients
+INSERT INTO Patients (F_Name, M_Name, L_Name, DOB, Gender, ContactNumber) VALUES
+('Nasser', 'Hamad', 'Al Shaqsi', '1988-02-19', 'Male', '96892810101'),
+('Asma', 'Talib', 'Al Ghabshi', '1994-05-27', 'Female', '96892810102'),
+('Sultan', 'Zahir', 'Al Barwani', '1990-10-11', 'Male', '96892810103'),
+('Ruqaya', 'Salim', 'Al Jabri', '1986-09-02', 'Female', '96892810104'),
+('Ahmed', 'Saeed', 'Al Hinawi', '1991-01-14', 'Male', '96892810105'),
+('Nawal', 'Mubarak', 'Al Riyami', '1993-12-25', 'Female', '96892810106'),
+('Ibrahim', 'Juma', 'Al Mukhaini', '1987-06-18', 'Male', '96892810107'),
+('Hind', 'Faisal', 'Al Subhi', '1995-04-03', 'Female', '96892810108'),
+('Adnan', 'Yaqoub', 'Al Balushi', '1992-08-08', 'Male', '96892810109'),
+('Amal', 'Hilal', 'Al Shanfari', '1989-07-10', 'Female', '96892810110'),
+('Walid', 'Hassan', 'Al Lawati', '1996-11-22', 'Male', '96892810111'),
+('Marwa', 'Ali', 'Al Amri', '1990-03-09', 'Female', '96892810112'),
+('Zaid', 'Rashid', 'Al Ghafri', '1985-05-05', 'Male', '96892810113'),
+('Huda', 'Khalfan', 'Al Mauly', '1994-10-17', 'Female', '96892810114'),
+('Khalfan', 'Nabil', 'Al Sinani', '1993-06-20', 'Male', '96892810115'),
+('Noor', 'Basim', 'Al Shukri', '1992-12-30', 'Female', '96892810116'),
+('Yahya', 'Talal', 'Al Mahrouqi', '1988-09-14', 'Male', '96892810117'),
+('Amina', 'Sulaiman', 'Al Rahbi', '1991-04-12', 'Female', '96892810118'),
+('Salem', 'Mansoor', 'Al Naabi', '1995-01-05', 'Male', '96892810119'),
+('Rasha', 'Adil', 'Al Badwawi', '1986-11-26', 'Female', '96892810120'),
+('Bassam', 'Majid', 'Al Kindi', '1990-07-16', 'Male', '96892810121'),
+('Lujain', 'Jabir', 'Al Shehhi', '1996-02-23', 'Female', '96892810122');
+

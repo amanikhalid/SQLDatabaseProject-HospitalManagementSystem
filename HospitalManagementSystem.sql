@@ -75,3 +75,12 @@ Username VARCHAR(50) PRIMARY KEY,
 PasswordHT VARCHAR(255),
 U_Role VARCHAR(20) CHECK (U_Role IN ('Admin', 'Nurses', 'Doctors'))
 );
+
+--Staff Table
+CREATE TABLE Staff (
+S_ID INT PRIMARY KEY IDENTITY(1,1),
+FullName VARCHAR(100),
+Role VARCHAR(50),
+Shift VARCHAR(20),
+Department_ID INT NOT NULL FOREIGN KEY REFERENCES Departments(Department_ID)
+);

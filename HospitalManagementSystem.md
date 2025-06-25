@@ -36,3 +36,16 @@ Each table is populated with realistic sample data:
 - 20+ Appointments
 
 - MedicalRecords, Admissions, and Billing entries
+
+### Part 3: Queries (DQL, DML)
+Demonstrated SQL queries:
+
+- Join queries across tables (Patients + Doctors + Departments)
+
+- Aggregate functions with GROUP BY / HAVING
+
+- Subqueries using EXISTS
+
+- Search/filter logic
+
+- DISTINCT and COUNT queries

@@ -10,6 +10,30 @@ Department_ID INT PRIMARY KEY IDENTITY(1,1),
 Department_Name VARCHAR(100) NOT NULL
 );
 
+-- Insert Departments
+INSERT INTO Departments (Department_Name) VALUES
+('Cardiology'),
+('Neurology'),
+('Pediatrics'),
+('Orthopedics'),
+('Oncology'),
+('Radiology'),
+('Emergency'),
+('Pathology'),
+('Anesthesiology'),
+('Dermatology'),
+('Gastroenterology'),
+('Endocrinology'),
+('Psychiatry'),
+('Urology'),
+('Nephrology'),
+('Ophthalmology'),
+('ENT'),
+('General Surgery'),
+('Obstetrics and Gynecology'),
+('Physical Therapy');
+
+
 --Patients Table
 CREATE TABLE Patients (
 P_ID INT PRIMARY KEY IDENTITY (1,1),
@@ -120,3 +144,25 @@ INSERT INTO Patients (F_Name, M_Name, L_Name, DOB, Gender, ContactNumber) VALUES
 ('Bassam', 'Majid', 'Al Kindi', '1990-07-16', 'Male', '96892810121'),
 ('Lujain', 'Jabir', 'Al Shehhi', '1996-02-23', 'Female', '96892810122');
 
+--Doctors Table
+INSERT INTO Doctors (F_Name, M_Name, L_Name, Specialization, ContactNumber, Department_ID) VALUES
+('Hassan', 'Juma', 'Al Gheilani', 'Cardiology', '96893311001', 1),
+('Suhaila', 'Rami', 'Al Qasimi', 'Neurology', '96893311002', 2),
+('Rajiv', 'Kumar', 'Patel', 'Pediatrics', '96893311003', 3),
+('Anna', 'Maria', 'Sokolova', 'Orthopedics', '96893311004', 4),
+('Tariq', 'Fahmi', 'Al Dhahli', 'Oncology', '96893311005', 5),
+('Fatma', 'Younis', 'Al Rashdi', 'Radiology', '96893311006', 6),
+('Lee', 'Chong', 'Min', 'Emergency', '96893311007', 7),
+('Khalfan', 'Zayed', 'Al Rawahi', 'Pathology', '96893311008', 8),
+('Noura', 'Yahya', 'Al Araimi', 'Anesthesiology', '96893311009', 9),
+('Samuel', 'Benjamin', 'Souza', 'Dermatology', '96893311010', 10),
+('Lubna', 'Saeed', 'Al Shuaili', 'Gastroenterology', '96893311011', 11),
+('Ahmed', 'Yasir', 'Al Riyami', 'Endocrinology', '96893311012', 12),
+('Fiona', 'Grace', 'Mendez', 'Psychiatry', '96893311013', 13),
+('Omar', 'Khamis', 'Al Habsi', 'Urology', '96893311014', 14),
+('Maria', 'Elena', 'Garcia', 'Nephrology', '96893311015', 15),
+('Yousef', 'Salman', 'Al Abri', 'Ophthalmology', '96893311016', 16),
+('Reem', 'Talal', 'Al Nabhani', 'ENT', '96893311017', 17),
+('Rashid', 'Basim', 'Al Mahrouqi', 'General Surgery', '96893311018', 18),
+('Maya', 'Ali', 'Abraham', 'Obstetrics and Gynecology', '96893311019', 19),
+('Huda', 'Suhail', 'Al Zakwani', 'Physical Therapy', '96893311020', 20);

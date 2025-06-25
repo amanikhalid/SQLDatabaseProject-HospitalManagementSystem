@@ -476,3 +476,17 @@ WHERE NOT EXISTS (
 );
 
 
+
+--Functions & Stored Procedures
+--Scalar function to calculate patient age from DOB
+CREATE FUNCTION fn_CalculateAge (@DOB DATE)
+RETURNS INT
+AS
+BEGIN
+RETURN DATEDIFF(YEAR, @DOB, GETDATE()) 
+- CASE WHEN DATEADD(YEAR, DATEDIFF(YEAR, @DOB, GETDATE()), @DOB) > GETDATE()
+THEN 1 ELSE 0 END;
+END;
+
+
+

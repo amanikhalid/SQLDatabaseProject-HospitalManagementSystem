@@ -627,4 +627,8 @@ END;
 CREATE ROLE DoctorUser;
 CREATE ROLE AdminUser;
 
+--GRANT SELECT for DoctorUser on Patients and Appointments only
+
+GRANT SELECT ON Patients TO DoctorUser;
+GRANT SELECT ON Appointments TO DoctorUser;
 

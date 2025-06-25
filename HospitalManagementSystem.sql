@@ -69,3 +69,9 @@ Room_Type VARCHAR(50) CHECK (Room_Type IN ('ICU', 'General', 'CCU', 'NICU', 'Out
 IsAvailable VARCHAR(6) DEFAULT 'True'
 );
 
+--Users Table
+CREATE TABLE Users (
+Username VARCHAR(50) PRIMARY KEY,
+PasswordHT VARCHAR(255),
+U_Role VARCHAR(20) CHECK (U_Role IN ('Admin', 'Nurses', 'Doctors'))
+);

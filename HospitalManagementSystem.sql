@@ -763,3 +763,9 @@ EXEC sp_add_schedule
 @freq_interval = 1,
 @active_start_time = 070000;
 GO
+
+--Attach the renamed schedule
+EXEC sp_attach_schedule
+@job_name = 'Doctors_Daily_Schedule_Report',
+@schedule_name = 'Daily_7AM_DoctorReport';
+GO

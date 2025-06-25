@@ -447,6 +447,16 @@ WHERE a.Appointment_Date BETWEEN '2025-07-01' AND '2025-07-31'
 GROUP BY doc.D_ID, doc.F_Name, doc.M_Name, doc.L_Name
 HAVING COUNT(a.Appointment_ID) > 5;
 
+--4. Join across 4 tables: medical records with patient, doctor, department 
+SELECT m.M_ID,
+       p.F_Name + ' ' + p.L_Name AS PatientName,
+       doc.F_Name + ' ' + doc.L_Name AS DoctorName,
+       d.Department_Name,
+       m.Diagnosis
+FROM MedicalRecords m
+JOIN Patients p ON m.P_ID = p.P_ID
+JOIN Doctors doc ON m.D_ID = doc.D_ID
+JOIN Departments d ON doc.Department_ID = d.Department_ID;
 
 
 

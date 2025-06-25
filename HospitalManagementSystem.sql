@@ -621,3 +621,10 @@ DELETE FROM Patients
 WHERE P_ID IN (SELECT P_ID FROM deleted);
 END;
 
+--Security
+--Create at least two user roles: DoctorUser, AdminUser
+-- Create roles
+CREATE ROLE DoctorUser;
+CREATE ROLE AdminUser;
+
+

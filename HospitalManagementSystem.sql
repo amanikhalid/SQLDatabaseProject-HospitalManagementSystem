@@ -419,3 +419,10 @@ INSERT INTO Users (Username, PasswordHT, U_Role) VALUES
 ('nurse3', 'hashedpassword10', 'Nurses'),
 ('doctor3', 'hashedpassword11', 'Doctors'),
 ('user1', 'hashedpassword12', 'Nurses');
+
+--Part 3: Test Queries (DQL, DML, TCL examples) 
+-- 1. List all patients who visited a certain doctor (D_ID = 3) 
+SELECT DISTINCT p.P_ID, p.F_Name, p.M_Name, p.L_Name
+FROM Patients p
+JOIN Appointments a ON p.P_ID = a.P_ID
+WHERE a.D_ID = 3;

@@ -404,3 +404,18 @@ INSERT INTO Admissions (P_ID, Room_No, ADate, DateOut) VALUES
 (20, 120, '2025-07-20', '2025-07-28'),
 (21, 101, '2025-07-21', '2025-07-29'),
 (22, 102, '2025-07-22', NULL);
+
+--User Table
+INSERT INTO Users (Username, PasswordHT, U_Role) VALUES
+('admin1', 'hashedpassword1', 'Admin'),
+('nurse1', 'hashedpassword2', 'Nurses'),
+('doctor1', 'hashedpassword3', 'Doctors'),
+('reception1', 'hashedpassword4', 'Nurses'),
+('admin2', 'hashedpassword5', 'Admin'),
+('nurse2', 'hashedpassword6', 'Nurses'),
+('doctor2', 'hashedpassword7', 'Doctors'),
+('reception2', 'hashedpassword8', 'Nurses'),
+('admin3', 'hashedpassword9', 'Admin'),
+('nurse3', 'hashedpassword10', 'Nurses'),
+('doctor3', 'hashedpassword11', 'Doctors'),
+('user1', 'hashedpassword12', 'Nurses');

@@ -307,3 +307,26 @@ INSERT INTO Staff (FullName, Role, Shift, Department_ID) VALUES
 ('Khalid Al Ghafri', 'Admin', 'Night', 18),
 ('Mona Al Azri', 'Nurse', 'Morning', 19),
 ('Peter Johnson', 'Receptionist', 'Evening', 20);
+
+--Rooms Table
+INSERT INTO Rooms (Room_No, Room_Type, IsAvailable) VALUES
+(101, 'ICU', 'True'),
+(102, 'General', 'True'),
+(103, 'CCU', 'False'),
+(104, 'NICU', 'True'),
+(105, 'Outpatient Examination Room', 'True'),
+(106, 'ICU', 'False'),
+(107, 'General', 'True'),
+(108, 'CCU', 'True'),
+(109, 'NICU', 'False'),
+(110, 'Outpatient Examination Room', 'True'),
+(111, 'General', 'True'),
+(112, 'ICU', 'True'),
+(113, 'CCU', 'False'),
+(114, 'NICU', 'True'),
+(115, 'Outpatient Examination Room', 'False'),
+(116, 'General', 'True'),
+(117, 'ICU', 'True'),
+(118, 'CCU', 'True'),
+(119, 'NICU', 'False'),
+(120, 'Outpatient Examination Room', 'True');

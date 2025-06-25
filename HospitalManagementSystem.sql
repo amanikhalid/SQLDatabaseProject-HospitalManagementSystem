@@ -554,6 +554,27 @@ SELECT P_ID, D_ID, Appointment_Date, '', '', 'Auto-log from appointment'
 FROM inserted;
 END;
 
+--Before delete on Patients → prevent deletion if pending bills exist
+CREATE TRIGGER trg_PreventPatientDeleteIfBillsExist
+ON Patients
+INSTEAD OF DELETE
+AS
+BEGIN
+IF EXISTS (
+SELECT 1
+FROM Billing b
+JOIN deleted d ON b.P_ID = d.P_ID
+)
+BEGIN
+RAISERROR('Cannot delete patient with pending bills.', 16, 1);
+ROLLBACK;
+END
+ELSE
+BEGIN
+DELETE FROM Patients WHERE P_ID IN (SELECT P_ID FROM deleted);
+END
+END;
+
 
 
 

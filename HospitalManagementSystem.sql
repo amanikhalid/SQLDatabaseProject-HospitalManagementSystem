@@ -516,6 +516,16 @@ THROW;
 END CATCH
 END;
 
+--Procedure to generate invoice (insert into Billing based on treatments)
+CREATE PROCEDURE sp_GenerateInvoice
+@P_ID INT,
+@Services VARCHAR(500),
+@Total_Cost DECIMAL(10,2)
+AS
+BEGIN
+INSERT INTO Billing (P_ID, BServices, Total_Cost, BillDate)
+VALUES (@P_ID, @Services, @Total_Cost, GETDATE());
+END;
 
 
 
